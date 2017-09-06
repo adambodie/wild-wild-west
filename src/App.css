@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Rock+Salt');
+
 /* =================================
   Element Styles
 ==================================== */
@@ -9,48 +11,26 @@
 body {
   font: 1em/1.5 'Roboto', sans-serif;
   color: #4c4c4c;
-  background: #f6f7f7;
-  padding-top: 145px;
+  background: #f1f1f1;
   padding-bottom: 3em;
   margin: 0;
 }
-
 a {
   text-decoration: none;
 }
 
+h1 {
+  color: white;
+  font-size: 3em;
+  font-family: 'Rock Salt', cursive;
+  margin-left: 5%;
+  text-shadow: 0 0 10px black;
+}
 ul,
 li {
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-input {
-  font-size: 1.12em;
-  height: 46px;
-  padding-bottom: 1em;
-  padding-left: 0;
-  background: none;
-  border: none;
-  outline: 0;
-  border-bottom: 4px solid #e4e4e4;
-  transition: border-color .4s;
-}
-
-input:focus {
-  border-color: #c1c1c1;
-}
-
-button {
-  width: 40px;
-  height: 35px;
-  border: 0;
-  background: none;
-  cursor: pointer;
-  outline: 0;
-  position: relative;
-  z-index: 2000;
 }
 
 /* =================================
@@ -59,7 +39,6 @@ button {
 
 .main-title {
   line-height: 80px;
-  color: white;
   font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -85,22 +64,11 @@ button {
   Layout Styles
 ==================================== */
 
-.inner,
-.main-content {
-  width: 90%;
-  max-width: 1025px;
-  margin: auto;
-}
-
 .main-header {
-  position: fixed;
-  top: 0;
-  left: 0;
   height: 250px;
-  width: 100%;
-  z-index: 1000;
   background-image: url('background.jpg');
   background-size:cover;
+  margin-top: -20px;
 }
 
 .main-content::after {
@@ -109,15 +77,14 @@ button {
   clear: both;
 }
 
-.is-hidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
+.flex-container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.flex-item {
+  flex: 1;
 }
 
 /* =================================
@@ -154,16 +121,8 @@ button {
 }
 
 @media (min-width: 769px) {
-  body {
-    padding-top: 115px;
-  }
   .main-title {
     float: left;
-  }
-  .search-form {
-    width: 422px;
-    float: right;
-    margin-top: 34px;
   }
   .photo-list li {
     width: 33.333333333%;

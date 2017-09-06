@@ -9,7 +9,7 @@ export default class App extends Component {
   constructor() {
       super();
       this.state = {
-        photos: []
+        photographs: []
       };
     }
 
@@ -17,7 +17,7 @@ export default class App extends Component {
       axios.get(url)
         .then(response => {
           this.setState({
-            photos: response.data.data
+            photographs: response.data
           });
         })
         .catch(error => {
@@ -26,16 +26,16 @@ export default class App extends Component {
     }
 
     render() {
-      console.log(this.state.photos);
       return (
         <div>
-          <div className="main-header">
-            <div className="inner">
-              <h1 className="photo">Adam&apos;s Wild Wild West</h1>
+          <div className="main-header flex-container">
+            <div className="inner flex-item">
+                <h1>Adam&apos;s Wild Wild West</h1>
             </div>
           </div>
           <div className="main-content">
-            <PhotoList data={this.state.photos}/>
+
+            <PhotoList data={this.state.photographs}/>
           </div>
         </div>
       );

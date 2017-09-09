@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Slider from 'react-slick';
 import './App.css';
 import axios from 'axios';
 import PhotoList from './Components/PhotoList';
@@ -26,6 +27,13 @@ export default class App extends Component {
     }
 
     render() {
+      var settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
       return (
         <div>
           <div className="main-header flex-container">
@@ -34,7 +42,11 @@ export default class App extends Component {
             </div>
           </div>
           <div className="main-content">
-
+          <Slider {...settings}>
+              <div><img src='https://farm5.staticflickr.com/4342/36816007262_fae2df8885.jpg' alt='kitty'/></div>
+              <div><img src='https://farm5.staticflickr.com/4342/36816007262_fae2df8885.jpg' alt='kitty'/></div>
+              <div><img src='https://farm5.staticflickr.com/4342/36816007262_fae2df8885.jpg' alt='kitty'/></div>
+          </Slider>
             <PhotoList data={this.state.photographs}/>
           </div>
         </div>

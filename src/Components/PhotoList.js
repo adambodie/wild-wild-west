@@ -1,16 +1,26 @@
 import React from 'react';
+import Slider from 'react-slick';
 import Photo from './Photo';
 
 const PhotoList = props => {
   let results = props.data;
-  console.log(results.photos);
+  console.log(results);
+  let settings = {
+  dots: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1
+};
   let photos = results.map((x) =>
-    <Photo url="https://farm{x.farm-id}.staticflickr.com/{x.server-id}/{x.id}_{x.secret}.jpg" key={x.index}/>
+    <div key={x.id}>
+    <Photo farm={x.farm} server={x.server} id={x.id} secret={x.secret} title={x.title}/>
+    </div>
   )
   return(
-    <ul className="photo-list">
+    <Slider {...settings}>
       {photos}
-    </ul>
+    </Slider>
   );
 }
 

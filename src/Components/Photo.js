@@ -1,12 +1,10 @@
 import React from 'react';
 
-/*https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg*/
-
-
 const Photo = props => (
-  <li className="photo-wrap">
-    <img src={props.url} alt=""/>
-  </li>
+  <div>
+        <img src={`https://farm${props.farm}.staticflickr.com/${props.server}/${props.id}_${props.secret}_z.jpg`} alt="xyz"/>
+        <h3>{props.title}</h3>
+  </div>
 );
 
 export default Photo;

@@ -14,7 +14,6 @@ body {
   font: 1em/1.5 'Roboto', sans-serif;
   color: #4c4c4c;
   background: #222222;
-  padding-bottom: 3em;
   margin: 0;
 }
 a {
@@ -28,9 +27,13 @@ h1 {
   margin-left: 5%;
   text-shadow: 0 0 10px black;
 }
-h3 {
+h3, h6 {
   text-align: center;
   color: white;
+}
+h4 {
+	margin-left: 20px;
+	color: white;
 }
 ul,
 li {
@@ -51,20 +54,6 @@ li {
   margin: 0;
 }
 
-.photo-list a {
-  display: block;
-  margin: auto;
-}
-
-.photo-wrap {
-  background-color: #fff;
-  margin-bottom: .8em;
-  position: relative;
-}
-
-.photo-wrap img {
-  min-width: 100%;
-}
 
 /* =================================
   Layout Styles
@@ -88,6 +77,10 @@ li {
   clear: both;
 }
 
+.main-footer {
+	background-color: #4c4c4c;
+	padding: 10px;
+}
 .flex-container {
   display: -webkit-flex;
   display: flex;
@@ -100,6 +93,11 @@ li {
 
 .slick-slide img {
     margin: 0 auto;
+    max-height: 480px;
+}
+
+.slick-prev:before, .slick-next:before {
+	font-size: 40px;
 }
 
 /* =================================
@@ -107,45 +105,18 @@ li {
 ==================================== */
 
 @media (min-width: 0) and (max-width: 549px) {
-  .photo-list li {
-    text-align: center;
-    margin: 20px 0 0;
-    font-size: 0;
-  }
 }
 
 @media (min-width: 550px) {
-  .photo-list li {
-    float: left;
-    width: 50%;
-    margin: 0;
-  }
-  .photo-wrap img {
-    height: 235px;
-  }
-  .photo-list .no-photos {
-    float: none;
-    width: 100%;
-  }
-  .photo-wrap {
-    border: 1px solid white;
-    padding: 0;
-    overflow: hidden;
-    font-size: 0;
-  }
+
 }
 
 @media (min-width: 769px) {
   .main-title {
     float: left;
   }
-  .photo-list li {
-    width: 33.333333333%;
-  }
+
 }
 
 @media (min-width: 769px) {
-  .photo-list li:nth-of-type(3n+1) {
-    clear: left;
-  }
 }

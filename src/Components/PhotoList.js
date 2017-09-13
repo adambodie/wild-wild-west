@@ -8,15 +8,15 @@ const PhotoList = props => {
   let settings = {
   dots: false,
   infinite: true,
-  speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1
 };
-  let photos = results.map((x) =>
+  let photos = results.map((x, index) =>
     <div key={x.id}>
-    <Photo farm={x.farm} server={x.server} id={x.id} secret={x.secret} title={x.title}/>
+    <Photo farm={x.farm} server={x.server} id={x.id} secret={x.secret} title={x.title} index={index + 1}/>
     </div>
   )
+  
   return(
     <Slider {...settings}>
       {photos}

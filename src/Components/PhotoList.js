@@ -6,7 +6,7 @@ const PhotoList = props => {
   let results = props.data;
   console.log(results);
   let settings = {
-  dots: false,
+  dots: true,
   infinite: true,
   slidesToShow: 1,
   slidesToScroll: 1

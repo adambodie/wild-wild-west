@@ -100,6 +100,20 @@ li {
 	font-size: 40px;
 }
 
+.slick-dots {
+	position: relative;
+	bottom: 0;
+	max-width: 1000px;
+	display: block;
+	margin: 0 auto;
+}
+
+.slick-dots li {
+	margin: 0;
+	width: 10px;
+	height: 10px;
+}
+
 /* =================================
   Media Queries
 ==================================== */
@@ -118,5 +132,3 @@ li {
 
 }
 
-@media (min-width: 769px) {
-}

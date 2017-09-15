@@ -93,17 +93,17 @@ li {
 
 .slick-slide img {
     margin: 0 auto;
-    max-height: 480px;
+    max-height: 200px;
 }
 
-.slick-prev:before, .slick-next:before {
-	font-size: 40px;
+.slick-prev, .slick-next {
+	top: 100px;
 }
 
 .slick-dots {
 	position: relative;
 	bottom: 0;
-	max-width: 1000px;
+	max-width: 500px;
 	display: block;
 	margin: 0 auto;
 }
@@ -118,17 +118,32 @@ li {
   Media Queries
 ==================================== */
 
-@media (min-width: 0) and (max-width: 549px) {
-}
 
 @media (min-width: 550px) {
-
+  .slick-slide img {
+      max-height: 340px;
+  }
+  .slick-prev, .slick-next {
+    top: 170px;
+  }
 }
 
 @media (min-width: 769px) {
   .main-title {
     float: left;
   }
+  .slick-dots {
+  	max-width: 1000px;
+  }
 
+  .slick-slide img {
+      max-height: 480px;
+  }
+  .slick-prev:before, .slick-next:before {
+  	font-size: 40px;
+  }
+
+  .slick-prev, .slick-next {
+  	top: 240px;
+  }
 }
-

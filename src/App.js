@@ -3,24 +3,6 @@ import './App.css';
 import axios from 'axios';
 import PhotoList from './Components/PhotoList';
 
-
-function formUrl(method, api_key, photoset_id, user_id, per_page) {
-	return `https://api.flickr.com/services/rest/
-	?method=${method}
-	&api_key=${api_key}
-	&photoset_id=${photoset_id}
-	&user_id=${user_id}
-	&per_page=${per_page}
-	&format=json&nojsoncallback=1`;
-}
-
-const url = formUrl('flickr.photosets.getPhotos', 
-					'0c3f8d32a28de8434240115b85a28499', 
-					'72157688485135075', 
-					'8994820%40N07', 
-					'300'
-					);
-
 export default class App extends Component {
   constructor() {
       super();
@@ -30,10 +12,10 @@ export default class App extends Component {
     }
 
     componentDidMount() {
-      axios.get(url)
+      axios.get(`https://s3-us-west-2.amazonaws.com/wildwildwest.bodiewebdesign.com/data.json`)
         .then(response => {
           this.setState({
-            photographs: response.data.photoset.photo
+            photographs: response.data
           });
         })
         .catch(error => {

@@ -3,8 +3,6 @@ import './App.css';
 import axios from 'axios';
 import PhotoList from './Components/PhotoList';
 
-const url = 'https://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=0c3f8d32a28de8434240115b85a28499&user_id=8994820@N07&format=json&nojsoncallback=1';
-
 export default class App extends Component {
   constructor() {
       super();
@@ -14,7 +12,7 @@ export default class App extends Component {
     }
 
     componentDidMount() {
-      axios.get(url)
+      axios.get(`https://s3-us-west-2.amazonaws.com/wildwildwest.bodiewebdesign.com/data.json`)
         .then(response => {
           this.setState({
             photographs: response.data
@@ -24,8 +22,9 @@ export default class App extends Component {
           console.log('Error fetching and parsing data', error);
         });
     }
-
+	
     render() {
+    let year = new Date().getFullYear();
       return (
         <div>
           <div className="main-header flex-container">
@@ -34,8 +33,10 @@ export default class App extends Component {
             </div>
           </div>
           <div className="main-content">
-
             <PhotoList data={this.state.photographs}/>
+          </div>
+          <div className="main-footer">
+			<h4>Adam Bodie &copy; {year}</h4>
           </div>
         </div>
       );

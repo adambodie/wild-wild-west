@@ -1,3 +1,5 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 @import url('https://fonts.googleapis.com/css?family=Rock+Salt');
 
 /* =================================
@@ -11,8 +13,7 @@
 body {
   font: 1em/1.5 'Roboto', sans-serif;
   color: #4c4c4c;
-  background: #f1f1f1;
-  padding-bottom: 3em;
+  background: #222222;
   margin: 0;
 }
 a {
@@ -25,6 +26,14 @@ h1 {
   font-family: 'Rock Salt', cursive;
   margin-left: 5%;
   text-shadow: 0 0 10px black;
+}
+h3, h6 {
+  text-align: center;
+  color: white;
+}
+h4 {
+	margin-left: 20px;
+	color: white;
 }
 ul,
 li {
@@ -45,20 +54,6 @@ li {
   margin: 0;
 }
 
-.photo-list a {
-  display: block;
-  margin: auto;
-}
-
-.photo-wrap {
-  background-color: #fff;
-  margin-bottom: .8em;
-  position: relative;
-}
-
-.photo-wrap img {
-  min-width: 100%;
-}
 
 /* =================================
   Layout Styles
@@ -71,12 +66,21 @@ li {
   margin-top: -20px;
 }
 
+.main-content {
+  margin: 0 auto;
+  padding: 40px;
+  width: 90%;
+}
 .main-content::after {
   content: " ";
   display: table;
   clear: both;
 }
 
+.main-footer {
+	background-color: #4c4c4c;
+	padding: 10px;
+}
 .flex-container {
   display: -webkit-flex;
   display: flex;
@@ -87,36 +91,40 @@ li {
   flex: 1;
 }
 
+.slick-slide img {
+    margin: 0 auto;
+    max-height: 200px;
+}
+
+.slick-prev, .slick-next {
+	top: 100px;
+}
+
+.slick-dots {
+	position: relative;
+	bottom: 0;
+	max-width: 500px;
+	display: block;
+	margin: 0 auto;
+}
+
+.slick-dots li {
+	margin: 0;
+	width: 10px;
+	height: 10px;
+}
+
 /* =================================
   Media Queries
 ==================================== */
 
-@media (min-width: 0) and (max-width: 549px) {
-  .photo-list li {
-    text-align: center;
-    margin: 20px 0 0;
-    font-size: 0;
-  }
-}
 
 @media (min-width: 550px) {
-  .photo-list li {
-    float: left;
-    width: 50%;
-    margin: 0;
+  .slick-slide img {
+      max-height: 340px;
   }
-  .photo-wrap img {
-    height: 235px;
-  }
-  .photo-list .no-photos {
-    float: none;
-    width: 100%;
-  }
-  .photo-wrap {
-    border: 1px solid white;
-    padding: 0;
-    overflow: hidden;
-    font-size: 0;
+  .slick-prev, .slick-next {
+    top: 170px;
   }
 }
 
@@ -124,13 +132,18 @@ li {
   .main-title {
     float: left;
   }
-  .photo-list li {
-    width: 33.333333333%;
+  .slick-dots {
+  	max-width: 1000px;
   }
-}
 
-@media (min-width: 769px) {
-  .photo-list li:nth-of-type(3n+1) {
-    clear: left;
+  .slick-slide img {
+      max-height: 480px;
+  }
+  .slick-prev:before, .slick-next:before {
+  	font-size: 40px;
+  }
+
+  .slick-prev, .slick-next {
+  	top: 240px;
   }
 }
